@@ -1,10 +1,11 @@
-
 import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { dummyResumeData } from '../assets/assets'
 import { ArrowLeftIcon } from 'lucide-react';
 import { User, FileText, Briefcase, GraduationCap, FolderIcon, Sparkles,ChevronLeft,ChevronRight } from 'lucide-react'
 import PersonalInfoForm from '../components/PersonalInfoForm';
+import ResumePreview from '../components/ResumePreview'
+
 
 function ResumeBuilder() {
 
@@ -109,7 +110,14 @@ setRemoveBackground={setRemoveBackground} />
     </div>
   </div>
         {/* Right Panel - Preview */}
-        <div></div>
+        <div className="lg:col-span-7 max-lg:mt-6">
+    <div>
+        {/* --- buttons ---- */}
+    </div>
+    
+    <ResumePreview data={resumeData} template={resumeData.template}
+accentColor={resumeData.accent_color}/>
+</div>
     </div>
 </div>
       
