@@ -7,6 +7,7 @@ import PersonalInfoForm from '../components/PersonalInfoForm';
 import ResumePreview from '../components/ResumePreview'
 import TemplateSelector from '../components/TemplateSelector';
 import ColorPicker from '../components/ColourPicker';
+import ProfessionalSummaryForm from '../components/ProfessionalSummaryForm'
 
 
 function ResumeBuilder() {
@@ -111,6 +112,9 @@ disabled={activeSectionIndex === sections.length - 1}>
 data })))} removeBackground={removeBackground}
 setRemoveBackground={setRemoveBackground} />
   )}
+  {activeSection.id === 'summary' && (
+                    <ProfessionalSummaryForm data={resumeData.professional_summary} onChange={(data)=> setResumeData(prev=> ({...prev, professional_summary: data}))} setResumeData={setResumeData}/>
+                  )}
 </div>
     
     
