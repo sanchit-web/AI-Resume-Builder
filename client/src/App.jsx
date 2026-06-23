@@ -9,6 +9,7 @@ import Layout from "./pages/Layout";
 import { useDispatch } from 'react-redux'
 import api from "./configs/api";
 import { login, setLoading } from './app/features/authSlice'
+import {Toaster} from 'react-hot-toast'
 
 function App() {
 
@@ -39,6 +40,7 @@ function App() {
 
   return (
     <>
+     <Toaster />
 
     <Routes>
 

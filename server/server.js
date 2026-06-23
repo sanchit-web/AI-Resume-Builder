@@ -13,8 +13,13 @@ const PORT = process.env.PORT || 3000;
 // Database connection
 await connectDB()
 
+
+app.use(cors({
+  origin: true,// your frontend URL
+  credentials: true               // needed if using cookies/sessions
+}));
 app.use(express.json());
-app.use(cors());
+
 
 app.get('/', (req, res) => res.send("Server is liveee..."))
 app.use('/api/users', userRouter)
